@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:screens/screens/secondscreen.dart';
 import 'screens/firstscreen.dart';
+
 void main() {
-  runApp(const MaterialApp(home: Home(),));
+  runApp( MaterialApp(
+    home: const Home(),
+    theme: ThemeData(fontFamily: 'RussoOne'),
+
+  ));
 }
 
 class Home extends StatefulWidget {
@@ -20,39 +25,43 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
+          children: [
             Container(
               margin: EdgeInsets.all(20),
-              child:
-            Text("Main Screen",style: TextStyle(fontSize: 30,color: Colors.black),),),
+              child: const Text(
+                "Main Screen",
+                style: TextStyle(
+                    fontSize: 30, color: Colors.black, fontFamily: 'RussoOne'),
+              ),
+            ),
             ElevatedButton.icon(
-              
-              onPressed: 
-              () {
-                setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return First();
-                  })
-                );});
-              }
-            , icon: Icon(Icons.add), label: Text("first screen")),
-            SizedBox(height: 20,),
-            
-            ElevatedButton.icon(onPressed: 
-              () {
-                setState(() {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Second();
-                  })
-                );});
-              }
-            , icon: Icon(Icons.add), label: Text("second screen"))
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const First();
+                    }));
+                  });
+                },
+                icon: const Icon(Icons.add),
+                label: const Text("first screen")),
+           const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton.icon(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Second();
+                    }));
+                  });
+                },
+                icon:const Icon(Icons.add),
+                label: const Text("second screen"))
           ],
         ),
       ),
-
-
-
     );
   }
 }

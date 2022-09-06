@@ -11,16 +11,16 @@ class Second extends StatefulWidget {
 class _SecondState extends State<Second> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return 
+       Center(
         child: Column(
           children: [
             const Text(
                 "second screen",
-                style: TextStyle(fontSize: 30, color: Colors.black ),
+                style: TextStyle(fontSize: 30, color: Colors.black,fontFamily: 'Pacifico'  ),
               
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -31,10 +31,9 @@ class _SecondState extends State<Second> {
                         ));
                   });
                 },
-                child: Text("return"))
+                child: const Text("return"))
           ],
         ),
-      ),
     );
   }
 }

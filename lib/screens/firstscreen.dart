@@ -20,16 +20,17 @@ class _FirstState extends State<First> {
        Center(
          child: Column(
           children: [
+            // ignore: avoid_unnecessary_containers
             Container(
-              child: Text(
+              child: const Text(
                 "this is my first screen",
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 30,fontFamily: 'AmaticSC'),
               ),
             ),
-            SizedBox(
+           const SizedBox(
               height: 20,
             ),
-            SizedBox(height: 20,),
+           const SizedBox(height: 20,),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -40,8 +41,8 @@ class _FirstState extends State<First> {
                     ));
                   });
                 },
-                child: Text("return")),
-                SizedBox(height: 20,),
+                child: const Text("return")),
+                const SizedBox(height: 20,),
             DropdownButton(
               value: mySelected,
               items: myStuff
